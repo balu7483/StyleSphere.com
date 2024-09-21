@@ -1,0 +1,7 @@
+<h1>Welcome</h1>
+<h2>Please LogIn!</h2>
+<form [formGroup]="login">
+    <input type="text" formControlName="email" id="email" placeholder="Enter Email"><br>
+    <input type="password" formControlName="password" id="password" placeholder="Enter Password"><br>
+    <button type="button" (click)="loginUser()">Login</button>
+</form>

@@ -1,0 +1,62 @@
+<h3>{{message}}</h3>
+<h1>Trousers Available</h1>
+<div>
+    <div>
+        <form [formGroup]="find">
+        <h2>
+            <input type="text" id="searchvalue" formControlName="searchvalue" placeholder="Search">
+            <button type="button" (click)="search()">Search</button>
+        </h2>
+        </form>
+    </div>
+    <table border="1">
+        <tr>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Type</th>
+          <th>Trousers Type</th>
+          <th>Color</th>
+          <th>Size</th>
+          <th>Gender</th>
+          <th>Description</th>
+          <th>Image URLs</th>
+          <th>Price</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let s of data">
+            <td>{{ s.name }}</td>
+            <td>{{ s.brand }}</td>
+            <td>{{ s.type }}</td>
+            <td>{{s.trousersType}}</td>
+            <td>
+              <ul>
+                <li *ngFor="let c of s.color">{{ c }}</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li *ngFor="let m of s.size">{{m}}</li>
+              </ul>
+            </td>
+            <td>{{ s.gender }}</td>
+            <td>{{ s.description }}</td>
+            <td>
+              <div class="image-slider">
+                <ul>
+                  <li *ngFor="let imageUrl of s.imageUrl">
+                    <img [src]="imageUrl" alt="Shirt Image">
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>
+              {{s.price}}.RS
+            </td>
+            
+            <td><a [routerLink]="['update',s.id]">Update</a></td>
+            <td><button (click)="delete(s.id)">Delete</button></td>
+          </tr>
+        </table>
+        <a routerLink="add">Add new Trouser</a>
+</div>

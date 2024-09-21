@@ -1,0 +1,51 @@
+<h1>update Slides</h1>
+<form [formGroup]="slidesdata">
+  <input type="text" formControlName="name" id="name" placeholder="Enter Slide Name"><br>
+  <select formControlName="brand" id="brand">
+    <option value="">Select Brand</option>
+    <option *ngFor="let brand of brands" [value]="brand">{{ brand }}</option>
+  </select><br>
+  <select formControlName="gender" id="gender">
+    <option value="">Select Gender</option>
+    <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+  </select><br>
+  <select formControlName="type">
+    <option value="">Select Type</option>
+    <option *ngFor="let type of types" [value]="type">{{type}}</option>
+  </select><br>
+  <select formControlName="slidesType" id="slidesType">
+    <option value="">Select shirtType</option>
+    <option *ngFor="let slideType of slidesTypes" [value]="slideType">{{slideType}}</option>
+  </select>
+  <textarea id="description" formControlName="description" placeholder="Enter the description"></textarea><br>
+  <input type="number" id="price" formControlName="price" placeholder="Enter the Price"><br>
+  
+  <div formArrayName="color">
+    <div *ngFor="let colorControl of colorArray.controls; let i = index">
+      <input type="text" [formControlName]="i" placeholder="Enter Color">
+      <button type="button" (click)="removeColor(i)">Remove Color</button>
+    </div>
+    <button type="button" (click)="addColor()">Add Color</button>
+  </div>
+
+  <div formArrayName="size">
+    <div *ngFor="let sizeControl of sizeArray.controls; let i = index">
+      <input type="text" [formControlName]="i" placeholder="Enter Size">
+      <button type="button" (click)="removeSize(i)">Remove Size</button>
+    </div>
+    <button type="button" (click)="addSize()">Add Size</button>
+  </div>
+
+  <div formArrayName="imageUrl">
+    <div *ngFor="let imageUrlControl of imageUrlArray.controls; let i =index">
+      <input type="text" [formControlName]="i" placeholder="Enter Image URL">
+      <button type="button" (click)="removeImageUrl(i)">Remove Image URL</button>
+    </div>
+    <button type="button" (click)="addImageUrl()">Add Image URL</button>
+  </div>
+  
+  <div>
+    <button type="button" (click)="UpdateSlides()">Update Slides</button>
+  </div>
+</form>
+

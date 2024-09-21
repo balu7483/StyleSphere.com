@@ -1,0 +1,15 @@
+<h1>User Update Console </h1>
+
+<form [formGroup]="data">
+<!-- <input type="text" name="firstName" id="firstName" placeholder="Enter First Name" formControlName="firstName"><br> -->
+<!-- <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name" formControlName="lastName"><br>
+<input type="email" name="email" id="email" placeholder="Enter email" formControlName="email"><br>
+<input type="date" name="dob" id="dob" placeholder="Date of Birth" formControlName="dob"><br>
+<input type="text" name="country" id="country" placeholder="Enter Country" formControlName="country"><br> -->
+<input type="{{firstName? 'text':'firstName'}}" [(ngModel)]="firstName" formControlName="firstName"  name="firstName" placeholder="First Name"><br>
+<input type="{{lastName? 'text':'lastName'}}"  [(ngModel)]="lastName" formControlName="lastName" name="lastName" placeholder="Last Name"><br>
+<input type="{{email? 'email':'email'}}" [(ngModel)]="email" formControlName="email" name="email" placeholder="Email"><br>
+<input type="{{dob? 'date':'dob'}}" [(ngModel)]="dob" formControlName="dob" name="dob"><br>
+<input type="{{country? 'text':'country'}}" [(ngModel)]="country" formControlName="country" name="country" placeholder="Country"><br>
+<button (click)="updateUser()">Save</button>
+</form>

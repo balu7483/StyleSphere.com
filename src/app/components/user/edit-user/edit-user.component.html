@@ -1,0 +1,11 @@
+<div>
+    <p>Id :{{id}}</p>
+    <p>First Name :{{firstName}}</p>
+    <p>Last Name :{{lastName}}</p>
+    <p>Date of Birth :{{dob}}</p>
+    <p>Country :{{country}}</p>
+    <p>Email :{{email}} </p>
+    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" name="password">
+<button (click)="togglePasswordVisibility()">show password</button><br>
+<a [routerLink]="['/user/Update',id]">Edit User</a>
+</div>

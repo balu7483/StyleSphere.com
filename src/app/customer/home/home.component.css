@@ -1,0 +1,83 @@
+.list-inline{
+    padding: 10px;
+    text-align: center;
+    font-size: 25px  
+}
+.list-inline-item{
+    padding-right: 35px;
+}
+.h1{
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+.top-bar{
+    text-align: right;
+}
+.top-bar-ul{
+    list-style: none;
+    display: flex;
+    padding-left: 15px;
+}
+.top-bar-ul-li{
+    padding-left: 15px;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 15px;
+}
+.main{
+    background-color:#D3D3D3;
+  }
+
+.search{
+    text-align: center;
+    margin-top: 10px;
+}
+.input-group{
+    text-align: center;
+}
+.search-div{
+    text-align: center;
+}
+/* .search-box{
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+} */
+.btn-box {
+    padding: 10px 20px; /* Add padding to the button */
+    background-color: #d6e1ed; /* Set the background color */
+    color: #29035d; /* Set the text color */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Set border radius to make the button rounded */
+    font-size: 16px; /* Set the font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-left: 10px;
+  }
+  
+  .btn-box:hover {
+    background-color: #0056b3; /* Change background color on hover */
+  }
+  .d-block{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .navbar-brand{
+    font-weight: bold;
+    font-family: Poppins;
+  }
+  .input{
+    height: 35px;
+    margin-right: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-family: Roboto;
+  }
+
+
+  
+
+
+  

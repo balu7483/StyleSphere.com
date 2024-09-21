@@ -1,0 +1,85 @@
+<h1>Users</h1>
+<h3>{{message}}</h3>
+<div>
+  <form [formGroup]="find">
+    <h2>
+      <input type="text" id="searchValue" name="searchValue" placeholder="Search By Email" formControlName="searchValue">
+      <button (click)="search()">Search</button>
+    </h2>
+  </form>
+</div>
+<table>
+  <tr>
+  <th>Id</th>
+  <th>Name</th>
+  <th>Email</th>
+  </tr>
+<tr *ngIf="searchData; else userData">
+<th>{{searchData.id}}</th>
+<th><a [routerLink]="['edit',searchData.id]">{{searchData.firstName}}.{{searchData.lastName}}</a></th>
+<th>{{searchData.email}}</th>
+</tr>
+<ng-template #userData>
+<tr *ngFor="let u of data">
+<th>{{u.id}}</th>
+<th><a [routerLink]="['edit' ,u.id]">{{u.firstName}}.{{u.lastName}}</a></th>
+<th>{{u.email}}</th>
+</tr>
+</ng-template>
+</table>
+<a [routerLink]="['/user/Add']">New User</a>
+
+
+
+
+
+
+<!-- <h3 class="message">{{message}}</h3>
+<h1>Styles Sphere</h1>
+<h2>Users Available</h2>
+<div>
+  <form [formGroup]="find">
+    <h2>
+      <input type="text" id="searchValue" name="searchValue" placeholder="Email or User id" formControlName="searchValue">
+      <button (click)="search()">Search</button>
+    </h2>
+  </form>
+</div>
+<table border="1">
+  <tr>
+    <th>ID </th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>DOB</th>
+    <th>Country</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngIf="searchData; else userData" class="search-result">
+    <th>{{searchData.id}}</th>
+    <th>{{searchData.firstName}}</th>
+    <th>{{searchData.lastName}}</th>
+    <th>{{searchData.email}}</th>
+    <th>{{searchData.password}}</th>
+    <th>{{searchData.dob}}</th>
+    <th>{{searchData.country}}</th>
+    <th><a [routerLink]="['Update', searchData.id]">Update</a></th>
+    <th><button (click)="deleteUser(searchData.id)">Delete</button></th>
+  </tr>
+  <ng-template #userData>
+    <tr *ngFor="let u of data">
+      <th>{{u.id}}</th>
+      <th>{{u.firstName}}</th>
+      <th>{{u.lastName}}</th>
+      <th>{{u.email}}</th>  
+      <th>{{u.password}}</th>
+      <th>{{u.dob}}</th>
+      <th>{{u.country}}</th>
+      <th><a [routerLink]="['Update', u.id]">Update</a></th>
+      <th><button (click)="deleteUser(u.id)">Delete</button></th>
+    </tr>
+  </ng-template>
+</table>
+<a routerLink="Add">Add User</a>   -->
